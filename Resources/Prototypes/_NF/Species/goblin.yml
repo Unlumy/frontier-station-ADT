@@ -2,7 +2,7 @@
 - type: species
   id: Goblin
   name: species-name-goblin
-  roundStart: true
+  roundStart: false # ADT tweak true > false Какие гоблины нахуй? У нас и так лут гоблинов много 
   prototype: MobGoblin
   sprites: MobGoblinSprites
   markingLimits: MobGoblinMarkingLimits

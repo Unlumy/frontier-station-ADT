@@ -2,6 +2,7 @@ using Content.Shared.Dataset;
 using Content.Shared.Humanoid.Markings;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype;
+using Robust.Shared.Utility;
 
 namespace Content.Shared.Humanoid.Prototypes;
 
@@ -123,6 +124,23 @@ public sealed partial class SpeciesPrototype : IPrototype
     [DataField]
     public int MaxAge = 120;
 
+    /// ADT Species Window start
+    [DataField]
+    public SpeciesCategory Category = SpeciesCategory.Classic;
+
+    [DataField]
+    public ResPath? Description;
+
+    [DataField]
+    public List<string> Pros = new();
+
+    [DataField]
+    public List<string> Cons = new();
+
+    [DataField]
+    public List<string> Special = new();
+    /// ADT Species Window end
+
     /// <summary>
     ///     Frontier: Forced marking color for this species, used for overwrites to force marking to use a single color, eg for Sheleg hair.
     /// </summary>
@@ -139,3 +157,13 @@ public enum SpeciesNaming : byte
     TheFirstofLast,
     LastFirst, // DeltaV
 }
+
+// ADT start
+public enum SpeciesCategory : byte
+{
+    Classic,
+    Unusual,
+    Special,
+    Sponsor
+}
+// ADT end
